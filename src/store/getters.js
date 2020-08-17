@@ -1,0 +1,16 @@
+export default {
+  accessToken: (state) => state.user.accessToken,
+  collapse: (state) => state.settings.collapse,
+  cachedRoutes: (state) => state.tagsBar.cachedRoutes,
+  device: (state) => state.settings.device,
+  errorLogs: (state) => state.errorLog.logs,
+  header: (state) => state.settings.header,
+  layout: (state) => state.settings.layout,
+  logo: (state) => state.settings.logo,
+  userName: (state) => state.user.userName,
+  permissions: (state) => state.user.permissions,
+  routes: (state) => state.permission.routes,
+  srcTableCode: (state) => state.table.srcCode,
+  tagsBar: (state) => state.settings.tagsBar,
+  visitedRoutes: (state) => state.tagsBar.visitedRoutes,
+};
