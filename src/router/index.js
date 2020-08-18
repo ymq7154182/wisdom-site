@@ -410,6 +410,28 @@ export const asyncRoutes = [
     ],
   },
   {
+    path: "/newPage",
+    component: EmptyLayout,
+    redirect: "noRedirect",
+    name: "newPage",
+    meta: { title: "嵌套内容", icon: "bug" },
+    alwaysShow: true,
+    children: [
+      {
+        path: "/bigPage",
+        name: "bigPage",
+        component: () => import("@/views/nest/bigPage"),
+        meta: { title: "大屏页" },
+      },
+      {
+        path: "/404",
+        name: "404",
+        component: () => import("@/views/404"),
+        meta: { title: "安全大事记" },
+      },
+    ],
+  },
+  {
     path: "*",
     redirect: "/404",
     hidden: true,
