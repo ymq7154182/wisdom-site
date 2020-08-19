@@ -1,14 +1,14 @@
 <template>
   <div class="login-container">
-    <el-alert
-      title="beautiful boys and girls欢迎加入vue-admin-beautifulQQ群：972435319"
-      type="success"
-      :closable="false"
-    >
-    </el-alert>
-    <div class="login-logo-bysj"></div>
+    <div class="login-logo-bysj" />
     <el-row>
-      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="8"
+        :xl="8"
+      >
         <el-form
           ref="loginForm"
           :model="loginForm"
@@ -20,7 +20,9 @@
           <div class="title">
             hello !
           </div>
-          <div class="title-tips">欢迎来到{{ title }}！</div>
+          <div class="title-tips">
+            欢迎来到{{ title }}！
+          </div>
           <el-form-item
             style="margin-top: 49px;"
             prop="userName"
@@ -38,10 +40,13 @@
               type="text"
             />
           </el-form-item>
-          <el-form-item prop="password" class="login-form-pass">
-            <span class="svg-container svg-container-pass"
-              ><byui-icon :icon="['fas', 'lock']"
-            /></span>
+          <el-form-item
+            prop="password"
+            class="login-form-pass"
+          >
+            <span class="svg-container svg-container-pass">
+              <byui-icon :icon="['fas', 'lock']" />
+            </span>
             <el-input
               :key="passwordType"
               ref="password"
@@ -56,18 +61,24 @@
               v-if="passwordType === 'password'"
               class="show-pwd"
               @click="showPwd"
-              ><byui-icon :icon="['fas', 'eye-slash']"
-            /></span>
-            <span v-else class="show-pwd" @click="showPwd"
-              ><byui-icon :icon="['fas', 'eye']"
-            /></span>
+            >
+              <byui-icon :icon="['fas', 'eye-slash']" />
+            </span>
+            <span
+              v-else
+              class="show-pwd"
+              @click="showPwd"
+            >
+              <byui-icon :icon="['fas', 'eye']" />
+            </span>
           </el-form-item>
           <el-button
             :loading="loading"
             class="login-btn"
             type="primary"
             @click.native.prevent="handleLogin"
-            >登录
+          >
+            登录
           </el-button>
         </el-form>
       </el-col>
@@ -185,7 +196,7 @@ export default {
 .login-container {
   height: 100vh;
   min-height: 600px;
-  background: url("~@/assets/login_images/background.jpg") center center fixed
+  background: url("~@/assets/login_images/login.png") center center fixed
     no-repeat;
   background-size: cover;
 
