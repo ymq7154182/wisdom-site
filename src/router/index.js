@@ -418,17 +418,59 @@ export const asyncRoutes = [
     alwaysShow: true,
     children: [
       {
-        path: "/bigPage",
-        name: "bigPage",
-        component: () => import("@/views/nest/bigPage"),
-        meta: { title: "大屏页" },
+        path: "/shouye",
+        name: "shouye",
+        component: () => import("@/views/nest/shouye"),
+        meta: { title: "首页" },
       },
       {
-        path: "/404",
-        name: "404",
-        component: () => import("@/views/404"),
+        path: "/safeThing",
+        name: "safeThing",
+        component: () => import("@/views/nest/safeThing"),
         meta: { title: "安全大事记" },
       },
+      {
+        path: "/videoMonitor",
+        name: "videoMonitor",
+        component: () => import("@/views/nest/videoMonitor"),
+        meta: { title: "视频监控" },
+      },
+      {
+        path: "/peopleManage",
+        name: "peopleManage",
+        component: () => import("@/views/nest/peopleManage"),
+        meta: { title: "人员管理" },
+      },
+      {
+        path: "/greenConstruction",
+        name: "greenConstruction",
+        component: () => import("@/views/nest/greenConstruction"),
+        meta: { title: "绿色施工" },
+      },
+      {
+        path: "/intellectHardware",
+        name: "intellectHardware",
+        component: () => import("@/views/nest/intellectHardware"),
+        meta: { title: "智能硬件" },
+      },
+      {
+        path: "/safeManage",
+        name: "safeManage",
+        component: () => import("@/views/nest/safeManage"),
+        meta: { title: "安全管理" },
+      },
+      {
+        path: "/dataManage",
+        name: "dataManage",
+        component: () => import("@/views/nest/dataManage"),
+        meta: { title: "资料管理" },
+      },
+      {
+        path: "/siteManage",
+        name: "siteManage",
+        component: () => import("@/views/nest/siteManage"),
+        meta: { title: "工地管理" },
+      }
     ],
   },
   {
