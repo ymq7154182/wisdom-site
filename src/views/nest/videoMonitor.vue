@@ -2,10 +2,11 @@
   <div class="pay-container">
     <iframe
       id="skipHome"
-      src="http://39.98.43.73:31300/back/zhgdjsp/homePage.jsp"
+      src="http://39.98.43.73:31300/back/zhgdjsp/video.jsp"
       frameborder="0"
       scrolling="auto"
-      style="width: 100%;height: 100%;"
+      width="1920"
+      height="1080"
     />
   </div>
 </template>
@@ -15,7 +16,7 @@
   // import Step2 from "./components/Step2";
   // import Step3 from "./components/Step3";
   export default {
-    name: "Pay",
+    name: "VideoMonitor",
     // components: { Step1, Step2, Step3 },
     data() {
       return {
