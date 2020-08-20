@@ -1,7 +1,7 @@
 <template>
   <div class="index-container">
     <el-row :gutter="15">
-      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+      <!-- <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <el-alert
           title="作者初衷：iView Pro要卖￥9999，layui Admin要卖￥2600，作者只好自己动手写一个分享给大家咯，免费的东西一定就差吗，一个人就一定比不过一个团队吗？我还那么年轻，我不会认输，在屏幕前驻足的你也不会轻易认输，对吧！弱小的人才习惯嘲讽与否定，内心强大的人从不吝啬赞美与鼓励，人生在世，得到每个人的认可几乎是痴心妄想，我也只是一条略懂前端的咸鱼，可我仍一直怀揣着改变世界的梦想，希望我们每个人，不管过程怎样，结局都是美好的。。。"
           :closable="false"
@@ -17,8 +17,15 @@
           </a>
         </el-alert>
         <br />
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
+      </el-col>-->
+
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="12"
+        :lg="6"
+        :xl="6"
+      >
         <el-card shadow="never">
           <div slot="header">
             <span>访问量</span>
@@ -29,9 +36,7 @@
             :options="fwl"
           />
           <div class="bottom">
-            <span
-              >日均访问量:
-
+            <span>日均访问量:
               <byui-count
                 :start-val="config1.startVal"
                 :end-val="config1.endVal"
@@ -45,7 +50,13 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="12"
+        :lg="6"
+        :xl="6"
+      >
         <el-card shadow="never">
           <div slot="header">
             <span>授权数</span>
@@ -56,8 +67,7 @@
             :options="sqs"
           />
           <div class="bottom">
-            <span
-              >总授权数:
+            <span>总授权数:
               <byui-count
                 :start-val="config2.startVal"
                 :end-val="config2.endVal"
@@ -66,11 +76,18 @@
                 :prefix="config2.prefix"
                 :suffix="config2.suffix"
                 :decimals="config2.decimals"
-            /></span>
+              />
+            </span>
           </div>
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="12"
+        :xl="12"
+      >
         <el-card shadow="never">
           <div slot="header">
             <span>词云</span>
@@ -83,8 +100,8 @@
             @click="handleClick"
           />
           <div class="bottom">
-            <span
-              >词云数量:<byui-count
+            <span>词云数量:
+              <byui-count
                 :start-val="config3.startVal"
                 :end-val="config3.endVal"
                 :duration="config3.duration"
@@ -92,12 +109,22 @@
                 :prefix="config3.prefix"
                 :suffix="config3.suffix"
                 :decimals="config3.decimals"
-            /></span>
+              />
+            </span>
           </div>
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="16" :xl="16">
-        <el-card class="card" shadow="never">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="16"
+        :xl="16"
+      >
+        <el-card
+          class="card"
+          shadow="never"
+        >
           <div slot="header">
             <span>销售量/签单量</span>
           </div>
@@ -108,11 +135,22 @@
           />
         </el-card>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
-        <el-card class="card" shadow="never">
+      <el-col
+        :xs="24"
+        :sm="24"
+        :md="24"
+        :lg="8"
+        :xl="8"
+      >
+        <el-card
+          class="card"
+          shadow="never"
+        >
           <div slot="header">
             <span>更新日志</span>
-            <div style="float: right;">部署时间:{{ updateTime }}</div>
+            <div style="float: right;">
+              部署时间:{{ updateTime }}
+            </div>
           </div>
           <table class="table">
             <tr>
@@ -140,11 +178,9 @@
               <td>{{ dependencies.axios }}</td>
             </tr>
           </table>
-          <div class="bottom-btn">
+          <!-- <div class="bottom-btn">
             <el-popover placement="top" width="250" trigger="hover">
-              <p>
-                谢谢您愿意支持开源，加群获取详细教程，群内提供vue-admin-beautiful-template基础模板
-              </p>
+              <p>谢谢您愿意支持开源，加群获取详细教程，群内提供vue-admin-beautiful-template基础模板</p>
               <el-image :src="require('@/assets/ewm.png')"></el-image>
               <a slot="reference" target="_blank">
                 <el-button type="primary">QQ讨论群 972435319</el-button>
@@ -153,41 +189,23 @@
             <a @click="handleChangeTheme">
               <el-button type="danger">修改主题和布局</el-button>
             </a>
-            <a
-              target="_blank"
-              href="https://github.com/chuzhixin/vue-admin-beautiful"
-            >
-              <el-button type="warning">
-                github下载源码点star（实时更新）
-              </el-button>
+            <a target="_blank" href="https://github.com/chuzhixin/vue-admin-beautiful">
+              <el-button type="warning">github下载源码点star（实时更新）</el-button>
             </a>
-            <a
-              target="_blank"
-              href="https://gitee.com/chu1204505056/vue-admin-beautiful"
-            >
+            <a target="_blank" href="https://gitee.com/chu1204505056/vue-admin-beautiful">
               <el-button type="warning">码云下载源码</el-button>
             </a>
             <el-popover placement="top" width="250" trigger="hover">
-              <p>
-                谢谢您愿意支持开源，加群获取详细教程，群内提供vue-admin-beautiful-template基础模板
-              </p>
+              <p>谢谢您愿意支持开源，加群获取详细教程，群内提供vue-admin-beautiful-template基础模板</p>
               <el-image :src="require('@/assets/ewm.png')"></el-image>
               <a slot="reference" target="_blank">
                 <el-button type="warning">文档</el-button>
               </a>
             </el-popover>
-          </div>
+          </div>-->
         </el-card>
       </el-col>
-      <el-col :span="24">
-        <el-alert
-          title="beautiful boys and girls欢迎加入vue-admin-beautifulQQ群：972435319，群内提供文档教程，如果你觉得框架一文不值，请勿加群"
-          :closable="false"
-        >
-        </el-alert>
-        <br />
-      </el-col>
-      <el-col
+      <!-- <el-col
         v-for="(item, index) in iconList"
         :key="index"
         :xs="12"
@@ -198,15 +216,12 @@
       >
         <app-link :to="item.link" target="_blank">
           <el-card class="icon-panel" shadow="never">
-            <byui-icon
-              :style="{ color: item.color }"
-              :icon="['fas', item.icon]"
-            ></byui-icon>
+            <byui-icon :style="{ color: item.color }" :icon="['fas', item.icon]"></byui-icon>
             <p>{{ item.title }}</p>
           </el-card>
         </app-link>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+      </el-col>-->
+      <!-- <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <el-card class="card" shadow="never">
           <div slot="header">
             <span>更新日志</span>
@@ -217,52 +232,39 @@
               :key="index"
               :timestamp="activity.timestamp"
               :color="activity.color"
-            >
-              {{ activity.content }}
-            </el-timeline-item>
+            >{{ activity.content }}</el-timeline-item>
           </el-timeline>
         </el-card>
-      </el-col>
-      <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
+      </el-col>-->
+      <!-- <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <el-card shadow="never">
           <div slot="header">
             <span>其他信息</span>
           </div>
-          <!--  <el-alert
-            :closable="false"
-            title="2020年5月12日，不同寻常的一天，汶川大地震的12周年，被社区一名叫做812770127@qq.com的网友骂的狗血淋头，说这是一个抄袭的项目，这是一个一点技术含量都没有的项目，没关系，我把这段话一直留在这里，总有一天你会看到这个你曾经不屑一顾的框架发展壮大，谢谢你的嘲讽让我变得强大"
-            type="error"
-          >
-          </el-alert>
-          <br /> -->
+          
           <el-alert
             title=" 其实人生改变命运的机会并没有太多，我们并不是不优秀，我们也并不是一无是处，我们也希望驻足山巅被众人仰望， 也许我们
             缺少的只是一个机会，缺少的只是生命中的导师，我希望这个框架帮助到更多的人，希望有一天，我们面试的时候不再胆怯，希望有一天别人看到的不仅仅是你的努力，还有你的功成名就，出人头地"
             type="success"
             :closable="false"
-          >
-          </el-alert>
-          <br />
+          ></el-alert>
+          <br>
           <el-alert
             :closable="false"
             title="框架优势：mock数据自动导出无需配置；views，vuex，api支持自动生成；自动fixed问题代码，可以愉快的拥抱eslint；支持stylint自动排序css属性，自动fiexed scss问题样式"
             type="success"
-          >
-          </el-alert>
-          <br />
+          ></el-alert>
+          <br>
           <el-alert
             :closable="false"
             title="鸣谢唐金州、花裤衩、贤心、element-ui、ivew的开源项目给我带来的很多的灵感"
             type="success"
-          >
-          </el-alert>
-          <br />
-
-          <el-alert :closable="false" :title="userAgent" type="info">
-          </el-alert>
-          <br />
+          ></el-alert>
+          <br>
+          <el-alert :closable="false" :title="userAgent" type="info"></el-alert>
+          <br>
         </el-card>
-      </el-col>
+      </el-col>-->
     </el-row>
   </div>
 </template>
@@ -273,13 +275,12 @@ import ByuiCount from "@/plugins/byuiCount";
 import { dependencies, devDependencies } from "../../../package.json";
 import { getList } from "@/api/changeLog";
 import { getRepos, getStargazers } from "@/api/github";
-import AppLink from "@/layouts/components/Link";
+// import AppLink from "@/layouts/components/Link";
 export default {
   name: "Index",
   components: {
     ByuiChart,
-    ByuiCount,
-    AppLink,
+    ByuiCount
   },
   data() {
     return {

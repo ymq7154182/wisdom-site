@@ -56,6 +56,7 @@
     "screenfull": "^5.0.2",
     "vue": "^2.6.11",
     "vue-echarts": "^5.0.0-beta.0",
+    "vue-jsonp": "^0.1.8",
     "vue-qart": "^2.2.0",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.1.6",
