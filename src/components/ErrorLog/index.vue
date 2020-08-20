@@ -1,15 +1,11 @@
 <template>
-  <div v-if="errorLogs.length > 0">
-    <el-badge
-      :value="errorLogs.length"
-      @click.native="dialogTableVisible = true"
-    >
+  <!-- <div v-if="errorLogs.length > 0">
+    <el-badge :value="errorLogs.length" @click.native="dialogTableVisible = true">
       <el-button type="danger">
-        <byui-icon :icon="['fas', 'bug']" />
+        <byui-icon :icon="['fas', 'bug']"/>
         {{ abbreviation }}异常捕获
       </el-button>
     </el-badge>
-
     <el-dialog
       :visible.sync="dialogTableVisible"
       append-to-body
@@ -32,9 +28,7 @@
         <el-table-column label="错误详情" width="120">
           <template slot-scope="scope">
             <el-popover placement="top-start" trigger="hover">
-              <div style="color: red;">
-                {{ scope.row.err.stack }}
-              </div>
+              <div style="color: red;">{{ scope.row.err.stack }}</div>
               <el-button slot="reference">查看</el-button>
             </el-popover>
           </template>
@@ -48,7 +42,7 @@
               target="_blank"
             >
               <el-button style="margin-left: 5px;" type="primary">
-                <byui-icon :icon="['fas', 'search']" />
+                <byui-icon :icon="['fas', 'search']"/>
                 {{ item.title }}
               </el-button>
             </a>
@@ -57,12 +51,12 @@
       </el-table>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogTableVisible = false">取 消</el-button>
-        <el-button type="danger" icon="el-icon-delete" @click="clearAll"
-          >暂不显示</el-button
-        >
+        <el-button type="danger" icon="el-icon-delete" @click="clearAll">暂不显示</el-button>
       </span>
     </el-dialog>
-  </div>
+  </div>-->
+
+  <div />
 </template>
 
 <script>

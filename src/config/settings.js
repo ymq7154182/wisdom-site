@@ -1,6 +1,6 @@
 module.exports = {
   //标题
-  title: "vue-admin-beautiful",
+  title: "智慧工地管理系统",
   //简写
   abbreviation: "vab",
   //开发环境端口号
