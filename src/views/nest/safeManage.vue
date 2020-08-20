@@ -25,7 +25,10 @@
       };
     },
     mounted() {
-
+      window.location.href = 'http://39.98.43.73:31300/back/zhgdjsp/security.jsp'
+      if (window.history) {
+       this.$router.push('/index')
+      }
 
     },
     methods: {
