@@ -1,5 +1,8 @@
 <template>
   <div class="login-wrap">
+    <div class="login_title">
+      <p>智慧工地大数据管理系统</p>
+    </div>
     <div class="ms-login">
       <div class="ms-title">
         用户登录
@@ -13,13 +16,15 @@
         @submit.native.prevent
       >
         <el-form-item prop="userame">
+          <i class="iconfont iconuser" />
           <el-input
             v-model="ruleForm.userName"
-            placeholder="请输入用户名"
+            placeholder="用户名"
             class="touming"
           />
         </el-form-item>
         <el-form-item prop="password">
+          <i class="iconfont iconmima" />
           <el-input
             v-model="ruleForm.password"
             type="password"
@@ -50,29 +55,29 @@ export default {
     return {
       disableLogin: false,
       wrongTimes: 0,
-      siteKey: sessionStorage.getItem('siteKey'),
+      siteKey: sessionStorage.getItem("siteKey"),
       recaptchaCheck: false,
       ruleForm: {
-        userName: '',
-        password: ''
+        userName: "",
+        password: "",
       },
       rules: {
         userName: [
-          { required: true, message: '请输入用户名', trigger: 'blur' }
+          { required: true, message: "请输入用户名", trigger: "blur" },
         ],
-        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
-      }
-    }
+        password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+      },
+    };
   },
-  mounted () {
-    
+  mounted() {
+    // var inputs = document.querySelectorAll(".touming input");
+    // for (var item in inputs) {
+    //   console.log(inputs[item]);
+    //   console.log((inputs[item].placeholder.style.padding = "15px"));
+    // }
   },
   methods: {
-  
-    
-   
-    
-   async handleLogin() {
+    async handleLogin() {
       this.$refs.ruleForm.validate((valid) => {
         if (valid) {
           this.loading = true;
@@ -91,8 +96,8 @@ export default {
         }
       });
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -102,6 +107,26 @@ export default {
   height: 100%;
   background-image: url("~@/assets/login_images/login.png");
   background-size: 100%;
+}
+.login_title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.login_title p {
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.1em;
+  font-size: 52px;
+  font-weight: 700;
+  background: linear-gradient(
+    to bottom,
+    rgb(236, 237, 243),
+    rgb(174, 180, 207),
+    rgb(157, 164, 197)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .ms-title {
   width: 100%;
@@ -114,18 +139,32 @@ export default {
   background-color: transparent;
   border: 1px solid #66e4ff;
   border-radius: 2px;
+  padding: 0 30px;
 }
 
 .ms-login {
   position: absolute;
   left: 60%;
-  top: 30%;
-  width: 350px;
-
+  top: 33%;
+  width: 400px;
+  /* height: 350px; */
   background-image: url("~@/assets/login_images/loginBack.png");
+  background-size: 100% 100%;
 }
 .ms-content {
   padding: 30px 30px;
+}
+.ms-content .iconuser {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.74);
+  padding: 0 4px 0 6px;
+  font-size: 18px;
+}
+.ms-content .iconmima {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.74);
+  padding: 0 4px 0 6px;
+  font-size: 18px;
 }
 .login-btn {
   text-align: center;
