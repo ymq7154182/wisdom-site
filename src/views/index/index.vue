@@ -22,9 +22,9 @@
       <el-col
         :xs="24"
         :sm="24"
-        :md="12"
-        :lg="6"
-        :xl="6"
+        :md="24"
+        :lg="12"
+        :xl="12"
       >
         <el-card shadow="never">
           <div slot="header">
@@ -53,13 +53,13 @@
       <el-col
         :xs="24"
         :sm="24"
-        :md="12"
-        :lg="6"
-        :xl="6"
+        :md="24"
+        :lg="12"
+        :xl="12"
       >
         <el-card shadow="never">
           <div slot="header">
-            <span>授权数</span>
+            <span>人数</span>
           </div>
           <byui-chart
             :autoresize="true"
@@ -67,7 +67,7 @@
             :options="sqs"
           />
           <div class="bottom">
-            <span>总授权数:
+            <span>打卡人数:
               <byui-count
                 :start-val="config2.startVal"
                 :end-val="config2.endVal"
@@ -81,7 +81,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col
+      <!-- <el-col
         :xs="24"
         :sm="24"
         :md="24"
@@ -113,7 +113,7 @@
             </span>
           </div>
         </el-card>
-      </el-col>
+      </el-col>-->
       <el-col
         :xs="24"
         :sm="24"
@@ -126,7 +126,7 @@
           shadow="never"
         >
           <div slot="header">
-            <span>销售量/签单量</span>
+            <span>机械管理</span>
           </div>
           <byui-chart
             :autoresize="true"
