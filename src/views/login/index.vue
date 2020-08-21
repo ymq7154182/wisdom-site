@@ -138,15 +138,16 @@ export default {
 .touming >>> .el-input__inner {
   background-color: transparent;
   border: 1px solid #66e4ff;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 0 30px;
+  margin-bottom: 5px;
 }
 
 .ms-login {
   position: absolute;
   left: 60%;
   top: 33%;
-  width: 400px;
+  width: 340px;
   /* height: 350px; */
   background-image: url("~@/assets/login_images/loginBack.png");
   background-size: 100% 100%;
@@ -158,7 +159,7 @@ export default {
   position: absolute;
   color: rgba(255, 255, 255, 0.74);
   padding: 0 4px 0 6px;
-  font-size: 18px;
+  font-size: 20px;
 }
 .ms-content .iconmima {
   position: absolute;

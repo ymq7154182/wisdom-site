@@ -1,22 +1,34 @@
 <template>
   <div class="nav-bar-container">
     <el-row :gutter="15">
-      <el-col :xs="4" :sm="12" :md="12" :lg="12" :xl="12">
+      <el-col
+        :xs="4"
+        :sm="12"
+        :md="12"
+        :lg="12"
+        :xl="12"
+      >
         <div class="left-panel">
           <i
             :class="collapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"
             :title="collapse ? '展开' : '收起'"
             class="fold-unfold"
             @click="handleCollapse"
-          ></i>
+          />
           <breadcrumb class="hidden-xs-only" />
         </div>
       </el-col>
-      <el-col :xs="20" :sm="12" :md="12" :lg="12" :xl="12">
+      <el-col
+        :xs="20"
+        :sm="12"
+        :md="12"
+        :lg="12"
+        :xl="12"
+      >
         <div class="right-panel">
           <error-log />
-          <byui-screenfull @refresh="refreshRoute"></byui-screenfull>
-          <theme-bar></theme-bar>
+          <byui-screenfull @refresh="refreshRoute" />
+          <theme-bar />
           <byui-icon
             title="重载路由"
             :pulse="pulse"
@@ -28,23 +40,25 @@
               <el-avatar
                 class="user-avatar"
                 :src="require('@/assets/user.gif')"
-              ></el-avatar>
+              />
               <span class="user-name">{{ userName }}</span>
-              <i class="el-icon-arrow-down el-icon--right"></i>
+              <i class="el-icon-arrow-down el-icon--right" />
             </span>
-
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
-                <byui-icon :icon="['fas', 'user']"></byui-icon>
-                个人中心
+                <byui-icon :icon="['fas', 'user']" />个人中心
               </el-dropdown-item>
-              <el-dropdown-item command="logout" divided>
-                <byui-icon :icon="['fas', 'sign-out-alt']"></byui-icon>
-                退出登录
+              <el-dropdown-item command="Backmanage">
+                <byui-icon :icon="['fas', 'user']" />后台管理
+              </el-dropdown-item>
+              <el-dropdown-item
+                command="logout"
+                divided
+              >
+                <byui-icon :icon="['fas', 'sign-out-alt']" />退出登录
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-
           <!--  <byui-icon
             title="退出系统"
             :icon="['fas', 'sign-out-alt']"
@@ -128,10 +142,16 @@ export default {
         });
       });
     },
+    skipManager() {
+      window.location.href = 'http://121.36.106.18:38080/index.html'
+    },
     handleCommand(command) {
       switch (command) {
         case "logout":
           this.logout();
+          break;
+        case "Backmanage":
+          this.skipManager()
           break;
       }
     },
