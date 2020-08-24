@@ -23,49 +23,45 @@ const actions = {
   login({ commit }, userInfo) {
     const { userName, password } = userInfo;
     return new Promise((resolve, reject) => {
-      login({ userName, password })
-        .then((response) => {
-          const { accessToken } = response.data;
-          commit("setAccessToken", accessToken);
-          setAccessToken(accessToken);
-          const hour = new Date().getHours();
-          const thisTime =
-            hour < 8
-              ? "早上好"
-              : hour <= 11
-              ? "上午好"
-              : hour <= 13
-              ? "中午好"
-              : hour < 18
+      const { accessToken } = {accessToken:"admin-accessToken"};
+      commit("setAccessToken", accessToken);
+      setAccessToken(accessToken);
+      const hour = new Date().getHours();
+      const thisTime =
+        hour < 8
+          ? "早上好"
+          : hour <= 11
+          ? "上午好"
+          : hour <= 13
+            ? "中午好"
+            : hour < 18
               ? "下午好"
               : "晚上好";
-          Vue.prototype.$baseNotify(
-            `欢迎登录${defaultSettings.title}`,
-            `${userName}，${thisTime}！`
-          );
-          resolve();
-        })
-        .catch((error) => {
-          reject(error);
-        });
+      Vue.prototype.$baseNotify(
+        `欢迎登录${defaultSettings.title}`,
+        `${userName}，${thisTime}！`
+      );
+      resolve();
     });
   },
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-      getInfo(state.accessToken)
-        .then((response) => {
-          const { data } = response;
-          if (!data) {
-            reject("验证失败，请重新登录...");
-          }
-          let { permissions, userName } = data;
-          commit("setPermissions", permissions);
-          commit("setUserName", userName);
-          resolve(data);
-        })
-        .catch((error) => {
-          reject(error);
-        });
+      // getInfo(state.accessToken)
+      //   .then((response) => {
+      //     // const { data } = response;
+      //
+      //   })
+      //   .catch((error) => {
+      //     reject(error);
+      //   });
+      const { data } = {code:200,msg:"success",data:{permissions:["admin"],userName:"admin"}}
+      if (!data) {
+        reject("验证失败，请重新登录...");
+      }
+      let { permissions, userName } = data;
+      commit("setPermissions", permissions);
+      commit("setUserName", userName);
+      resolve(data);
     });
   },
   logout({ commit, state, dispatch }) {

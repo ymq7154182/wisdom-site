@@ -81,6 +81,7 @@ export default {
       this.$refs.ruleForm.validate((valid) => {
         if (valid) {
           this.loading = true;
+          // this.$router.push('/index')
           this.$store
             .dispatch("user/login", this.ruleForm)
             .then(() => {
