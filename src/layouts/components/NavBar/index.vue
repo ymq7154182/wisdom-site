@@ -41,7 +41,7 @@
                 class="user-avatar"
                 :src="require('@/assets/user.gif')"
               />
-              <span class="user-name">{{ userName }}</span>
+              <span class="user-name">创巨圆</span>
               <i class="el-icon-arrow-down el-icon--right" />
             </span>
             <el-dropdown-menu slot="dropdown">
